@@ -1,5 +1,3 @@
-# Create your views here.
-# analyzer/views.py
 
 import requests
 import base64
@@ -20,21 +18,21 @@ def index(request):
     if request.method == 'POST' and request.FILES.get('image'):
         uploaded_file = request.FILES['image']
         
-        # 1. Sauvegarder l'image temporairement (pour l'envoyer à FastAPI)
+       
         file_path = default_storage.save(f"tmp/{uploaded_file.name}", ContentFile(uploaded_file.read()))
         full_path = Path(default_storage.location) / file_path
 
         try:
-            # 2. Envoyer l'image à l'API FastAPI
+           
             with open(full_path, 'rb') as f:
                 response = requests.post(API_URL, files={'file': f})
             
             if response.status_code == 200:
                 data = response.json()
                 
-                # Décoder l'image Base64 pour l'afficher
+               
                 img_data = base64.b64decode(data['image'])
-                # On l'enregistre dans le contexte pour l'afficher dans la template
+                
                 context['image'] = base64.b64encode(img_data).decode('utf-8')
                 context['report'] = data['report']
             else:
