@@ -1,0 +1,46 @@
+# Fichiers Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environnements virtuels
+quantification_wbc/
+venv/
+env/
+.venv/
+
+# Données brutes et traitées (TROP LOURDES)
+data/raw/
+data/processed/
+data/splits/
+
+# Modèles et sorties (Fichiers .pt .pth .h5)
+outputs/
+runs/
+*.pt
+*.pth
+*.ckpt
+
+# Logs et fichiers temporaires
+*.log
+/tmp/
+*.tmp
+
+# Django (Base de données SQLite)
+db.sqlite3
+*.sqlite3
+
+# Fichiers IDE (VS Code, PyCharm)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers OS
+.DS_Store
+Thumbs.db
+
+# Variables d'environnement
+.env
