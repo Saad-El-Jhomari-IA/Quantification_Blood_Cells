@@ -1,26 +1,26 @@
-# Detection parameters (YOLOv8)
+
 detection:
-  model_size: "yolov8n.pt" # 'yolov8n.pt' (nano), 'yolov8s.pt' (small), 'yolov8m.pt' (medium)
-  epochs: 50 # Nombre de cycles d'entraînement
-  batch_size: 16 # Nombre d'images par lot (réduire si GPU manque de mémoire)
-  image_size: 640 # Redimensionnement des images (YOLO standard)
-  learning_rate: 0.01 # Taux d'apprentissage initial
-  momentum: 0.937 # Momentum pour l'optimiseur SGD
-  weight_decay: 0.0005 # Régularisation L2
-  device: cpu # 0 = GPU (si disponible), 'cpu' = CPU
-  workers: 4 # Nombre de threads pour charger les données
-  project_name: "blood_detection" # Nom du projet (nom du dossier de sortie)
+  model_size: "yolov8n.pt" 
+  epochs: 50 
+  batch_size: 16 
+  image_size: 640 
+  learning_rate: 0.01 
+  momentum: 0.937 
+  weight_decay: 0.0005 
+  device: cpu 
+  workers: 4 
+  project_name: "blood_detection" 
 
 classification:
-  model_name: "efficientnet_b0" # Modèle utilisé
-  pretrained: true # Utiliser les poids ImageNet
-  num_classes: 4 # 4 types de WBC
-  image_size: 224 # Taille d'entrée du modèle
-  batch_size: 32 # Taille du lot (réduire si GPU manque de mémoire)
-  epochs: 30 # Nombre d'époques
-  learning_rate: 0.001 # Taux d'apprentissage initial
-  weight_decay: 0.0001 # Régularisation L2
-  scheduler_factor: 0.1 # Facteur de réduction du learning rate (ReduceLROnPlateau)
-  scheduler_patience: 3 # Patience avant de réduire le LR
-  device: cpu # 0 = GPU, 'cpu' = CPU
+  model_name: "efficientnet_b0" 
+  pretrained: true 
+  num_classes: 4 
+  image_size: 224 
+  batch_size: 32 
+  epochs: 30 
+  learning_rate: 0.001 
+  weight_decay: 0.0001 
+  scheduler_factor: 0.1 
+  scheduler_patience: 3 
+  device: cpu 
   project_name: "blood_classification"
