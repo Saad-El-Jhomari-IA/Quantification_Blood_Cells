@@ -42,7 +42,7 @@ def index(request):
             context['error'] = f"Impossible de contacter l'API IA. Vérifiez que le serveur FastAPI tourne sur le port 8001. Erreur : {e}"
 
         finally:
-            # Nettoyer le fichier temporaire
+        
             full_path.unlink(missing_ok=True)
 
     return render(request, 'analyzer/index.html', context)
