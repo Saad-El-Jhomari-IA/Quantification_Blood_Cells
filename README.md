@@ -46,3 +46,24 @@ blood/
 ├── .gitignore
 └── README.md
 ```
+
+## 🖥️ Application Web - Interface Utilisateur
+
+L'application web permet aux médecins de télécharger une image microscopique et d'obtenir instantanément un rapport d'analyse complet.
+
+### 📤 Étape 1 : Téléchargement de l'image
+
+L'utilisateur sélectionne une image (format JPG/PNG) via l'interface simple.
+
+![Interface de téléchargement](screenshots/app_upload.png)
+
+### 📊 Étape 2 : Résultat de l'analyse
+
+L'image est automatiquement analysée par l'IA. Les globules blancs sont entourés de couleurs différentes selon leur type (Monocytes, Lymphocytes, etc.). Un rapport détaillé s'affiche avec :
+
+- Le nombre total de WBC
+- Le décompte par type (Neutrophiles, Monocytes, Lymphocytes, Eosinophiles)
+- Le ratio Neutrophiles/Lymphocytes (N/L)
+- Une interprétation médicale automatique
+
+![Résultat de l'analyse](screenshots/app_result.png)
