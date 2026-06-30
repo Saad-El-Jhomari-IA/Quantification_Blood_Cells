@@ -15,55 +15,23 @@ This project provides an **end-to-end automated system** for detecting and class
   - Eosinophil
 - **Web Application**: A professional web interface (Django + FastAPI) allows clinicians to upload images and receive a structured report (counts, N/L ratio, medical interpretation).
 
-## Architecture
+## 🖥️ Web Application - User Interface
 
-The project is built with a **decoupled microservice architecture** to ensure scalability and reliability:
+The web application allows doctors to upload a microscopic image and instantly obtain a comprehensive analysis report.
 
-1. **FastAPI Server** (Port `8001`): Loads the AI models (YOLO + EfficientNet) and exposes a `/predict` endpoint.
-2. **Django Server** (Port `8000`): Hosts the web interface, handles user uploads, and communicates with the FastAPI backend.
+### 📤 Step 1: Image Upload
 
-## Project Structure
+The user selects an image (JPG/PNG format) via the simple interface.
 
-```text
-blood/
-├── api/                    # FastAPI inference server
-│   └── main.py
-├── blood_site/             # Django project settings
-├── analyzer/               # Django app (views, uploads)
-├── config/                 # YAML configuration files
-├── src/                    # Core source code
-│   ├── data/               # Dataset loaders & preprocessing
-│   ├── models/             # YOLO & EfficientNet definitions
-│   ├── training/           # Training loops & metrics
-│   ├── inference/          # Full pipeline (detection + classification)
-│   └── evaluation/         # Evaluation scripts
-├── scripts/                # Executable scripts (training, evaluation)
-├── notebooks/              # Jupyter notebooks (EDA, visualization)
-├── templates/              # HTML templates for Django
-├── outputs/                # (Ignored) Saved models and predictions
-├── data/                   # (Ignored) Raw & processed datasets
-├── requirements.txt        # Python dependencies
-├── .gitignore
-└── README.md
-```
+![Upload Interface](screenshots/app_upload.JPG)
 
-## 🖥️ Application Web - Interface Utilisateur
+### 📊 Step 2: Analysis Result
 
-L'application web permet aux médecins de télécharger une image microscopique et d'obtenir instantanément un rapport d'analyse complet.
+The image is automatically analyzed by the AI. White blood cells are outlined in different colors according to their type (Monocytes, Lymphocytes, etc.). A detailed report is displayed with:
 
-### 📤 Étape 1 : Téléchargement de l'image
+* Total WBC count
+* Count by type (Neutrophils, Monocytes, Lymphocytes, Eosinophils)
+* Neutrophil/Lymphocyte (N/L) ratio
+* Automatic medical interpretation
 
-L'utilisateur sélectionne une image (format JPG/PNG) via l'interface simple.
-
-![Interface de téléchargement](screenshots/app_upload.JPG)
-
-### 📊 Étape 2 : Résultat de l'analyse
-
-L'image est automatiquement analysée par l'IA. Les globules blancs sont entourés de couleurs différentes selon leur type (Monocytes, Lymphocytes, etc.). Un rapport détaillé s'affiche avec :
-
-- Le nombre total de WBC
-- Le décompte par type (Neutrophiles, Monocytes, Lymphocytes, Eosinophiles)
-- Le ratio Neutrophiles/Lymphocytes (N/L)
-- Une interprétation médicale automatique
-
-![Résultat de l'analyse](screenshots/app_result.JPG)
+![Analysis Result](screenshots/app_result.JPG)
