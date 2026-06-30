@@ -55,7 +55,7 @@ L'application web permet aux médecins de télécharger une image microscopique 
 
 L'utilisateur sélectionne une image (format JPG/PNG) via l'interface simple.
 
-![Interface de téléchargement](screenshots/app_upload.png)
+![Interface de téléchargement](screenshots/app_upload.JPG)
 
 ### 📊 Étape 2 : Résultat de l'analyse
 
@@ -66,4 +66,4 @@ L'image est automatiquement analysée par l'IA. Les globules blancs sont entour�
 - Le ratio Neutrophiles/Lymphocytes (N/L)
 - Une interprétation médicale automatique
 
-![Résultat de l'analyse](screenshots/app_result.png)
+![Résultat de l'analyse](screenshots/app_result.JPG)
